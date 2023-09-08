@@ -1,6 +1,7 @@
 <h3>Dockerizing a laravel application.</h3>
 
 <h6>Useful notes:</h6>
+
 - Clone the repo into your root of your project.
 - Make sure file and folder ownership is set to a user with id and gid of 1000, and if didn't exist create one.
 - Make sure `docker/entrypoint.sh` has `755` permission.
