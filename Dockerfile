@@ -11,7 +11,7 @@ ENV PHP_OPCACHE_REVALIDATE_FREQ=1
 RUN apt-get update && apt-get install -y unzip libpq-dev libcurl4-gnutls-dev nginx libonig-dev
 
 # Install PHP extensions.
-RUN docker-php-ext-install pdo pdo_mysql bcmath curl mbstring opcache
+RUN docker-php-ext-install pdo pdo_mysql bcmath curl mbstring opcache exif
 
 # Copy configuration files.
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
