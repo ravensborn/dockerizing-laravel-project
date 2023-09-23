@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   app:
-    container_name: ${APP_CONTAINER_NAME}
+    container_name: ${DOCKER_APP_CONTAINER_NAME}
     build:
       context: .
       target: php
@@ -13,14 +13,14 @@ services:
     volumes:
       - ./:/var/www
     ports:
-      - "9005:8080"
+      - "${DOCKER_APP_PORT}:8080"
     depends_on:
       - database
     networks:
       - laravel-network
 
   database:
-    container_name: ${DB_CONTAINER_NAME}
+    container_name: ${DOCKER_DB_CONTAINER_NAME}
     image: mysql:8.0
     environment:
       - MYSQL_DATABASE=${DB_DATABASE}
